@@ -1,0 +1,15 @@
+About
+
+Support for Twig Template language in Gtk Sourceview
+
+About Twig
+
+Twig is a modern template engine for PHP
+
+Installation and usage instructions are available at:
+
+http://www.twig-project.org/
+
+Install
+
+Put the twig.lang file in the gtksourceview-2.0/language-specs/ folder, normally located at /usr/share/
