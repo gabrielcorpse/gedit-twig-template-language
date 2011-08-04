@@ -152,6 +152,7 @@
         <keyword>if</keyword>
         <keyword>elseif</keyword>
         <keyword>endif</keyword>
+        <keyword>extends</keyword>
         <keyword>ifequal</keyword>
         <keyword>endifequal</keyword>
         <keyword>else</keyword>
@@ -183,6 +184,26 @@
         <keyword>popup</keyword>
         <keyword>popup_init</keyword>
         <keyword>textformat</keyword>
+        <keyword>macro</keyword>
+        <keyword>endmacro</keyword>
+        <keyword>in</keyword>
+        <keyword>import</keyword>
+        <keyword>as</keyword>
+        <keyword>filter</keyword>
+        <keyword>endfilter</keyword>
+        <keyword>set</keyword>
+        <keyword>endset</keyword>
+        <keyword>from</keyword>
+        <keyword>not</keyword>
+        <keyword>is</keyword>
+        <keyword>autoescape</keyword>
+        <keyword>endautoescape</keyword>
+        <keyword>use</keyword>
+        <keyword>with</keyword>
+        <keyword>spaceless</keyword>
+        <keyword>endspaceless</keyword>
+        <keyword>raw</keyword>
+        <keyword>endraw</keyword>
     </context>
 
     <context id="operators" style-ref="operator" extend-parent="false">
@@ -257,8 +278,8 @@
     </context>
 
     <context id="twig-block" style-ref="embedded" end-at-line-end="true">
-      <start>&#123;(&#123;|&#35;|&#37;)(/?)</start>
-      <end>(&#125;|&#35;|&#37;)&#125;</end>
+      <start>&#123;(&#123;|&#37;)(/?)</start>
+      <end>(&#125;|&#37;)&#125;</end>
       <include>
         <context sub-pattern="0" where="start" style-ref="boolean"/>
         <context sub-pattern="0" where="end" style-ref="boolean"/>
@@ -293,4 +314,3 @@
 
   </definitions>
 </language>
-
