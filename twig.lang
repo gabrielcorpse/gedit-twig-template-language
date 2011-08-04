@@ -20,6 +20,7 @@
     <style id="keyword"         _name="Keyword" map-to="def:keyword"/>
     <style id="operator"        _name="Operator" map-to="def:operator"/>
     <style id="filters"         _name="Null Value" map-to="def:boolean"/>
+    <style id="tests"           _name="tests" map-to="def:boolean"/>
     <style id="boolean"         _name="Boolean value" map-to="def:boolean"/>
     <style id="floating-point"  _name="Floating point number" map-to="def:floating-point"/>
     <style id="decimal"         _name="Decimal number" map-to="def:decimal"/>
@@ -169,6 +170,7 @@
         <keyword>assign</keyword>
         <keyword>counter</keyword>
         <keyword>cycle</keyword>
+        <keyword>range</keyword>
         <keyword>debug</keyword>
         <keyword>eval</keyword>
         <keyword>fetch</keyword>
@@ -220,15 +222,20 @@
         <keyword>count_sentences</keyword>
         <keyword>count_words</keyword>
         <keyword>date</keyword>
-        <keyword>safe</keyword>
         <keyword>date_format</keyword>
         <keyword>default</keyword>
         <keyword>escape</keyword>
+        <keyword>format</keyword>
         <keyword>indent</keyword>
+        <keyword>join</keyword>
+        <keyword>length</keyword>
         <keyword>lower</keyword>
+        <keyword>merge</keyword>
         <keyword>nl2br</keyword>
         <keyword>regex_replace</keyword>
         <keyword>replace</keyword>
+        <keyword>safe</keyword>
+        <keyword>sort</keyword>
         <keyword>spacify</keyword>
         <keyword>string_format</keyword>
         <keyword>strip</keyword>
@@ -236,6 +243,16 @@
         <keyword>truncate</keyword>
         <keyword>upper</keyword>
         <keyword>wordwrap</keyword>
+    </context>
+
+    <context id="tests" style-ref="tests">
+      <prefix>(?i)\b</prefix> <!-- case insensitive -->
+        <keyword>divisibleby</keyword>
+        <keyword>none</keyword>
+        <keyword>even</keyword>
+        <keyword>odd</keyword>
+        <keyword>sameas</keyword>
+        <keyword>empty</keyword>
     </context>
 
     <context id="boolean" style-ref="boolean">
@@ -295,6 +312,7 @@
         <context ref="keywords"/>
         <context ref="operators"/>
         <context ref="filters"/>
+        <context ref="tests"/>
         <context ref="boolean"/>
         <context ref="float"/>
         <context ref="decimal-number"/>
@@ -314,3 +332,4 @@
 
   </definitions>
 </language>
+
