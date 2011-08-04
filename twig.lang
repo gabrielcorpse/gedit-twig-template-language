@@ -171,6 +171,8 @@
         <keyword>counter</keyword>
         <keyword>cycle</keyword>
         <keyword>range</keyword>
+        <keyword>constant</keyword>
+        <keyword>parent</keyword>
         <keyword>debug</keyword>
         <keyword>eval</keyword>
         <keyword>fetch</keyword>
@@ -225,6 +227,7 @@
         <keyword>date_format</keyword>
         <keyword>default</keyword>
         <keyword>escape</keyword>
+        <keyword>defined</keyword>
         <keyword>format</keyword>
         <keyword>indent</keyword>
         <keyword>join</keyword>
@@ -234,6 +237,13 @@
         <keyword>nl2br</keyword>
         <keyword>regex_replace</keyword>
         <keyword>replace</keyword>
+        <keyword>url_encode</keyword>
+        <keyword>json_encode</keyword>
+        <keyword>striptags</keyword>
+        <keyword>reverse</keyword>
+        <keyword>keys</keyword>
+        <keyword>e</keyword>
+        <keyword>title</keyword>
         <keyword>safe</keyword>
         <keyword>sort</keyword>
         <keyword>spacify</keyword>
@@ -332,4 +342,3 @@
 
   </definitions>
 </language>
-
