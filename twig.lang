@@ -4,12 +4,12 @@
     <property name="mimetypes">text/twig;</property>
     <property name="globs">*.twig;*.html;</property>
     <property name="line-comment-start">#</property>
-    <property name="block-comment-start">/*</property>
-    <property name="block-comment-end">*/</property>
+    <property name="block-comment-start">{#</property>
+    <property name="block-comment-end">#}</property>
   </metadata>
 
   <styles>
-    <style id="embedded"         _name="Comment" map-to="def:template"/>
+    <style id="embedded"        _name="Comment" map-to="def:template"/>
     <style id="comment"         _name="Comment" map-to="def:comment"/>
     <style id="error"           _name="Error" map-to="def:error"/>
     <style id="variable"        _name="Variable" map-to="def:identifier"/>
@@ -29,8 +29,6 @@
   </styles>
 
   <definitions>
-
-
     <!-- Html comments are more permissive than xml comments -->
     <context id="comment" style-ref="comment">
         <start>&lt;!--</start>
@@ -40,31 +38,16 @@
         </include>
     </context>
 
-    <context id="bash-line-comment" style-ref="comment" end-at-line-end="true" extend-parent="false">
-      <start>#</start>
-      <end>#</end>
-      <include>
-        <context ref="def:in-line-comment"/>
-      </include>
-    </context>
-
-    <context id="cpp-line-comment" style-ref="comment" end-at-line-end="true" extend-parent="false">
-      <start>//</start>
-      <include>
-        <context ref="def:in-line-comment"/>
-      </include>
-    </context>
-
-    <context id="c-block-comment" style-ref="comment">
-      <start>\*</start>
-      <end>\*</end>
-      <include>
-        <context ref="def:in-line-comment"/>
-      </include>
+    <context id="twig-comment" style-ref="comment">
+        <start>&#123;&#35;</start>
+        <end>&#35;&#125;</end>
+        <include>
+            <context ref="def:in-line-comment"/>
+        </include>
     </context>
 
     <context id="close-comment-outside-comment" style-ref="error">
-      <match>\*/(?!\*)</match>
+      <match>&#35;&#125;(?!&#123;&#35;)</match>
     </context>
 
     <context id="escape" style-ref="escape">
@@ -310,9 +293,6 @@
       <include>
         <context sub-pattern="0" where="start" style-ref="boolean"/>
         <context sub-pattern="0" where="end" style-ref="boolean"/>
-        <context ref="cpp-line-comment"/>
-        <context ref="bash-line-comment"/>
-        <context ref="c-block-comment"/>
         <context ref="double-quoted-string"/>
         <context ref="single-quoted-string"/>
         <context ref="backtick-string"/>
@@ -337,6 +317,8 @@
       <include>
         <context ref="twig-block"/>
         <context ref="html:html"/>
+        <context ref="twig-comment"/>
+        <context ref="close-comment-outside-comment"/>
       </include>
     </context>
 
