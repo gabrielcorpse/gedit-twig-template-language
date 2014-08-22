@@ -12,4 +12,4 @@ http://www.twig-project.org/
 
 Install
 
-Put the twig.lang file in the gtksourceview-2.0/language-specs/ folder, normally located at /usr/share/
+Put the twig.lang file in the gtksourceview-3.0/language-specs/ folder, normally located at /usr/share/
